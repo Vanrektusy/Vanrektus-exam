@@ -27,7 +27,14 @@ jobs:
       run: npm run test:unit
     - name: Display SoftUni Username
       run: echo "Vanrektus"
-      
+
+  deploy:
+
+    runs-on: ubuntu-latest
+
+    needs: build
+
+    steps:
     - name: Deploy To Production
       uses: johnbeynon/render-deploy-action@v0.0.8
       with:
